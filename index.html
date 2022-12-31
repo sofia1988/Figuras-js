@@ -49,13 +49,12 @@
           <p>Calcular el Área y el Perimetro del Triángulo .</p>
           <form>
             <div class="mb-3 ">
-              <label for="inputTriangulo" class="form-label">Escribe cuanto mide el lado y la base de tu Triángulo .</label>
-              <input type="text" class="form-control shadow-none my-2" id="inputTriangulo1" >
-              <input type="text" class="form-control shadow-none my-2" id="inputTriangulo2" >
-              <input type="text" class="form-control shadow-none" id="inputTriangulo3" >
+              <label for="inputTriangulo" id="trianguloLabel" class="form-label">Recuerda que para calcular el Perimetro debes colocar tres números y para el Área dos.</label>
+              <input type="text" class="form-control shadow-none my-2" placeholder="Ingresa los números separados por un espacio" id="inputTriangulo" >
+            
             </div>
             <button type="button"  id="botoncalcularperimetrotriangulo" data-bs-toggle="modal" data-bs-target="#modalcalcularp" class="btn btn-warning d-block mb-3 px-3">Calcular Perimetro</button>
-            <button type="button" id="botoncalcularAreaCuadradotriangulo"  data-bs-toggle="modal" data-bs-target="#modalcalcularp" class="btn btn-warning d-block px-4">Calcular el Área</button>
+            <button type="button" id="botoncalcularAreatriangulo"  data-bs-toggle="modal" data-bs-target="#modalcalcularp" class="btn btn-warning d-block px-4">Calcular el Área</button>
           </form>
         </div>
       

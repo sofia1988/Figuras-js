@@ -4,7 +4,8 @@ const botoncalcularAreacuadrado = document.getElementById('botoncalcularAreaCuad
 const title = document.getElementById('title')
 
 const botoncalcularperimetrotriangulo = document.getElementById('botoncalcularperimetrotriangulo')
-const botoncalcularAreaCuadradotriangulo = document.getElementById('botoncalcularAreaCuadradotriangulo')
+const botoncalcularAreatriangulo = document.getElementById('botoncalcularAreatriangulo')
+
 
 const botoncalculardiametroCirculo = document.getElementById('botoncalculardiametroCirculo')
 const botoncalcularperimetrocirculo = document.getElementById('botoncalcularperimetrocirculo')
@@ -51,46 +52,54 @@ botoncalcularAreacuadrado.addEventListener( 'click', () => {
 // cuadrado
 
 // triangulo
-const perimetroTriangulo = (lado1 ,lado2, base) =>{
-   return lado1 + lado2 + base
-}
+ 
 
 const areaTriangulo = (base ,altura) =>{
-  return (base *altura)/2;
+   return (base *altura)/2;
+ }
+
+
+
+const perimetroTriangulo = (lado1 ,lado2, base) =>{
+    return lado1 + lado2 + base
 }
-
-
-
+let lado1;
+let lado2;
+let base;
  const calcularPerimetroTriangulo = ()=> {
-   const lado1 = document.getElementById("inputTriangulo1")
-   const lado2 = document.getElementById("inputTriangulo2")
-   const base= document.getElementById("inputTriangulo3")
-   const lado11 = parseFloat(lado1.value)
-   const lado22 = parseFloat(lado2.value)
-   const base11 = parseFloat(base.value)
-   
-   
-   const perimetro =  perimetroTriangulo(lado11 ,lado22, base11)
+   const input = document.getElementById("inputTriangulo").value
+   let numbers = input.split(' ');
+   lado1 = parseInt( numbers[0]);
+   lado2= parseInt( numbers[1]);
+   base = parseInt( numbers[2]);
+ 
+   const perimetro =  perimetroTriangulo(lado1 ,lado2, base)
    title.textContent = perimetro
-}
-   botoncalcularperimetrotriangulo.addEventListener( 'click', () => { 
-   calcularPerimetroTriangulo()
-})
-   const calcularAreaTriangulo =()=>{
-      const lado1 = document.getElementById("inputTriangulo1")
-      const lado2 = document.getElementById("inputTriangulo2")
-      const base= document.getElementById("inputTriangulo3")
-      const lado11 = parseFloat(lado1.value)
-      const lado22 = parseFloat(lado2.value)
-      const base11 = parseFloat(base.value)
+ }
 
-      const altura1 = lado11 +lado22
-      const area = areaTriangulo(base11,altura1)
-      title.textContent = area
-   }
-   botoncalcularAreaCuadradotriangulo.addEventListener( 'click', () => { 
-      calcularAreaTriangulo()
+botoncalcularperimetrotriangulo.addEventListener( 'click', () => { 
+    calcularPerimetroTriangulo()
    })
+
+   let base2;
+   let altura;
+ const calcularAreaTriangulo = ()=> {
+   const input = document.getElementById("inputTriangulo").value
+   let numbers = input.split(' ');
+   base2 = parseInt( numbers[0]);
+   altura= parseInt( numbers[1]);
+ 
+ 
+   const area = areaTriangulo(base2, altura)
+   title.textContent = area
+ }
+
+ botoncalcularAreatriangulo.addEventListener( 'click', () => { 
+   calcularAreaTriangulo()
+   })
+
+
+
  
 // triangulo
 
